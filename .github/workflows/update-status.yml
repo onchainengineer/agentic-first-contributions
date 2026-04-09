@@ -1,0 +1,40 @@
+name: Update Live Status
+
+on:
+  schedule:
+    # Run every Monday at 09:17 UTC
+    - cron: "17 9 * * 1"
+  workflow_dispatch:  # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests pyyaml
+
+      - name: Fetch issue counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch-issues.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet projects/live-status.md; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add projects/live-status.md
+          git commit -m "chore: update live status [skip ci]"
+          git push

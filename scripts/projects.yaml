@@ -1,0 +1,200 @@
+# Tracked projects for the live status update script.
+#
+# To add a project:
+#   1. Verify it meets the criteria in CONTRIBUTING.md
+#   2. Add an entry here with owner/repo format
+#   3. Set the category and language
+#   4. Open a PR
+#
+# The fetch-issues.py script queries GitHub API for each of these
+# and updates projects/live-status.md with current counts.
+
+projects:
+  # Agent Frameworks (Python)
+  - repo: langchain-ai/langchain
+    category: agent-framework
+    language: Python
+  - repo: langchain-ai/langgraph
+    category: agent-framework
+    language: Python
+  - repo: crewAIInc/crewAI
+    category: agent-framework
+    language: Python
+  - repo: microsoft/autogen
+    category: agent-framework
+    language: Python
+  - repo: run-llama/llama_index
+    category: agent-framework
+    language: Python
+  - repo: pydantic/pydantic-ai
+    category: agent-framework
+    language: Python
+  - repo: stanfordnlp/dspy
+    category: agent-framework
+    language: Python
+  - repo: microsoft/semantic-kernel
+    category: agent-framework
+    language: Multi
+
+  # Agent Frameworks (TypeScript)
+  - repo: langchain-ai/langchainjs
+    category: agent-framework
+    language: TypeScript
+  - repo: mastra-ai/mastra
+    category: agent-framework
+    language: TypeScript
+  - repo: vercel/ai
+    category: agent-framework
+    language: TypeScript
+
+  # Agent Frameworks (Other)
+  - repo: 0xPlaygrounds/rig
+    category: agent-framework
+    language: Rust
+  - repo: tmc/langchaingo
+    category: agent-framework
+    language: Go
+  - repo: cloudwego/eino
+    category: agent-framework
+    language: Go
+
+  # Visual Builders
+  - repo: langflow-ai/langflow
+    category: visual-builder
+    language: Python
+  - repo: langgenius/dify
+    category: visual-builder
+    language: Python
+  - repo: FlowiseAI/Flowise
+    category: visual-builder
+    language: TypeScript
+  - repo: n8n-io/n8n
+    category: visual-builder
+    language: TypeScript
+
+  # Coding Agents
+  - repo: cline/cline
+    category: coding-agent
+    language: TypeScript
+  - repo: All-Hands-AI/OpenHands
+    category: coding-agent
+    language: Python
+  - repo: Aider-AI/aider
+    category: coding-agent
+    language: Python
+  - repo: continuedev/continue
+    category: coding-agent
+    language: TypeScript
+  - repo: TabbyML/tabby
+    category: coding-agent
+    language: Rust
+  - repo: block/goose
+    category: coding-agent
+    language: Rust
+  - repo: princeton-nlp/SWE-agent
+    category: coding-agent
+    language: Python
+
+  # Memory and RAG
+  - repo: mem0ai/mem0
+    category: memory-rag
+    language: Python
+  - repo: getzep/zep
+    category: memory-rag
+    language: Go
+  - repo: letta-ai/letta
+    category: memory-rag
+    language: Python
+  - repo: chroma-core/chroma
+    category: memory-rag
+    language: Python
+  - repo: qdrant/qdrant
+    category: memory-rag
+    language: Rust
+  - repo: weaviate/weaviate
+    category: memory-rag
+    language: Go
+  - repo: lancedb/lancedb
+    category: memory-rag
+    language: Rust
+  - repo: milvus-io/milvus
+    category: memory-rag
+    language: Go
+  - repo: explodinggradients/ragas
+    category: memory-rag
+    language: Python
+  - repo: Unstructured-IO/unstructured
+    category: memory-rag
+    language: Python
+
+  # LLM Tooling
+  - repo: ggerganov/llama.cpp
+    category: llm-tooling
+    language: C++
+  - repo: vllm-project/vllm
+    category: llm-tooling
+    language: Python
+  - repo: huggingface/text-generation-inference
+    category: llm-tooling
+    language: Rust
+  - repo: ollama/ollama
+    category: llm-tooling
+    language: Go
+  - repo: BerriAI/litellm
+    category: llm-tooling
+    language: Python
+  - repo: simonw/llm
+    category: llm-tooling
+    language: Python
+  - repo: guidance-ai/guidance
+    category: llm-tooling
+    language: Python
+  - repo: outlines-dev/outlines
+    category: llm-tooling
+    language: Python
+
+  # MCP
+  - repo: modelcontextprotocol/servers
+    category: mcp
+    language: Multi
+  - repo: modelcontextprotocol/typescript-sdk
+    category: mcp
+    language: TypeScript
+  - repo: modelcontextprotocol/python-sdk
+    category: mcp
+    language: Python
+  - repo: modelcontextprotocol/rust-sdk
+    category: mcp
+    language: Rust
+  - repo: modelcontextprotocol/go-sdk
+    category: mcp
+    language: Go
+  - repo: modelcontextprotocol/inspector
+    category: mcp
+    language: TypeScript
+
+  # Evals and Observability
+  - repo: promptfoo/promptfoo
+    category: evals-observability
+    language: TypeScript
+  - repo: langfuse/langfuse
+    category: evals-observability
+    language: TypeScript
+  - repo: helicone/helicone
+    category: evals-observability
+    language: TypeScript
+  - repo: Arize-ai/phoenix
+    category: evals-observability
+    language: Python
+  - repo: traceloop/openllmetry
+    category: evals-observability
+    language: Python
+  - repo: comet-ml/opik
+    category: evals-observability
+    language: Python
+  - repo: confident-ai/deepeval
+    category: evals-observability
+    language: Python
+  - repo: openai/evals
+    category: evals-observability
+    language: Python

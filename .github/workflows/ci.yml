@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  markdown-lint:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"
+          config: |
+            {
+              "MD013": false,
+              "MD033": false,
+              "MD041": false
+            }
+
+  validate-yaml:
+    name: Validate projects.yaml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate YAML
+        run: |
+          pip install pyyaml
+          python -c "
+          import yaml
+          with open('scripts/projects.yaml') as f:
+              data = yaml.safe_load(f)
+          assert 'projects' in data, 'missing projects key'
+          for p in data['projects']:
+              assert 'repo' in p, f'missing repo in {p}'
+              assert '/' in p['repo'], f'invalid repo format: {p[\"repo\"]}'
+              assert 'category' in p, f'missing category in {p}'
+              assert 'language' in p, f'missing language in {p}'
+          print(f'Validated {len(data[\"projects\"])} projects')
+          "
+
+  script-syntax:
+    name: Check Python script syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m py_compile scripts/fetch-issues.py
