@@ -66,6 +66,14 @@ Use MCP servers from Python, including LangChain integration.
 
 Curated list of MCP servers. Not a codebase but a great discovery tool.
 
+### [basementstudio/xmcp](https://github.com/basementstudio/xmcp)
+
+TypeScript framework for building MCP servers with file-based tools, resources, and prompts.
+
+- **Stack**: TypeScript, Node.js, React for MCP Apps
+- **Good for**: Documentation, runnable examples, adapter tests, and CLI improvements
+- **Why start here**: A [contribution guide](https://github.com/basementstudio/xmcp/blob/main/CONTRIBUTING.md), focused examples, and [good first issues](https://github.com/basementstudio/xmcp/issues?q=is%3Aissue+label%3A%22good+first+issue%22) give you concrete starting points.
+
 ## Why MCP Is a Great Place to Start
 
 **New protocol.** First movers have outsized influence.
