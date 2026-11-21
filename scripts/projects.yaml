@@ -154,6 +154,9 @@ projects:
     language: Python
 
   # MCP
+  - repo: basementstudio/xmcp
+    category: mcp
+    language: TypeScript
   - repo: modelcontextprotocol/servers
     category: mcp
     language: Multi
